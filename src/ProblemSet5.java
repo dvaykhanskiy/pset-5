@@ -20,7 +20,7 @@ public class ProblemSet5 {
 
     public static void main(String[] args) {
         ProblemSet5 ps = new ProblemSet5();
-        System.out.println(ps.countMe("I have a brand new camera", 'a'));
+        System.out.println(ps.triplets("aaa bbb aaaa"));
     }
 
     /*
@@ -120,16 +120,32 @@ public class ProblemSet5 {
     }
 
     /*
-    //  * Exercise 6.
-    //  *
-    //  * Given a string, compute the number of triplets in text.
-    //  */
-    //
-    // public int triplets(String text) {
-    //
-    // }
-    //
-    // /*
+     * Exercise 6.
+     *
+     * Given a string, compute the number of triplets in text.
+     */
+
+    public int triplets(String text) {
+      char char1;
+      char char2;
+      char char3;
+      int triplets = 0;
+      if (text == null) {
+        return -1;
+      } else {
+        for (int i = 0; i < text.length() - 1; i++) {
+          char1 = text.charAt(i);
+          char2 = text.charAt(i + 1);
+          char3 = text.charAt(i + 2);
+          if (char1 == char2 && char2 == char3) {
+            triplets++;
+          }
+        }
+        return triplets;
+      }
+    }
+
+    /*
     //  * Exercise 7.
     //  *
     //  * Given a string, compute the sum of the digits in text.
