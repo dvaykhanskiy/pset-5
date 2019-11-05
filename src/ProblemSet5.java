@@ -20,7 +20,7 @@ public class ProblemSet5 {
 
     public static void main(String[] args) {
         ProblemSet5 ps = new ProblemSet5();
-        System.out.println(ps.isCentered("1234567", "355"));
+        System.out.println(ps.countMe("I have a brand new camera", 'a'));
     }
 
     /*
@@ -95,16 +95,31 @@ public class ProblemSet5 {
     }
 
     /*
-    //  * Exercise 5.
-    //  *
-    //  * Given a string and a character, compute the number of words that end in suffix.
-    //  */
-    //
-    // public int countMe(String text, char suffix) {
-    //
-    // }
-    //
-    // /*
+     * Exercise 5.
+     *
+     * Given a string and a character, compute the number of words that end in suffix.
+     */
+
+    public int countMe(String text, char suffix) {
+      int suffixCount = 0;
+      if (text == null) {
+        return -1;
+      } else if (Character.isLetter(suffix)) {
+        for (int i = 0; i < text.length() - 1; i++) {
+          if (text.charAt(i) == suffix && text.charAt(i + 1) == ' ') {
+            suffixCount++;
+          }
+        }
+        if (text.charAt(text.length() - 1) == suffix) {
+          suffixCount++;
+        }
+        return suffixCount;
+      } else {
+        return -1;
+      }
+    }
+
+    /*
     //  * Exercise 6.
     //  *
     //  * Given a string, compute the number of triplets in text.
