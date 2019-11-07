@@ -126,14 +126,14 @@ public class ProblemSet5 {
      */
 
     public int triplets(String text) {
-      char char1;
-      char char2;
-      char char3;
+      char char1 = 'a';
+      char char2 = 'a';
+      char char3 = 'a';
       int triplets = 0;
-      if (text == null) {
+      if (text.equals(null)) {
         return -1;
       } else {
-        for (int i = 0; i < text.length() - 1; i++) {
+        for (int i = 0; i < (text.length() - 2); i++) {
           char1 = text.charAt(i);
           char2 = text.charAt(i + 1);
           char3 = text.charAt(i + 2);
