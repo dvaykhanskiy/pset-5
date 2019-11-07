@@ -20,7 +20,7 @@ public class ProblemSet5 {
 
     public static void main(String[] args) {
         ProblemSet5 ps = new ProblemSet5();
-        System.out.println(ps.triplets("aaa bbb aaaa"));
+        System.out.println(ps.addMe("akhb kuga d123 kjbs 4 oj5"));
     }
 
     /*
@@ -146,16 +146,29 @@ public class ProblemSet5 {
     }
 
     /*
-    //  * Exercise 7.
-    //  *
-    //  * Given a string, compute the sum of the digits in text.
-    //  */
-    //
-    // public long addMe(String text) {
-    //
-    // }
-    //
-    // /*
+     * Exercise 7.
+     *
+     * Given a string, compute the sum of the digits in text.
+     */
+
+    public long addMe(String text) {
+      char char1 = 'a';
+      int numInts = 0;
+      if (text.equals(null)) {
+        return -1;
+      } else {
+        for (int i = 0; i < (text.length()); i++) {
+          char1 = text.charAt(i);
+          if (Character.isDigit(char1) || char1 == '0') {
+            numInts++;
+          }
+        }
+        System.out.println(char1);
+        return numInts;
+      }
+    }
+
+    /*
     //  * Exercise 8.
     //  *
     //  * Given a string, compute the length of the longest sequence.
