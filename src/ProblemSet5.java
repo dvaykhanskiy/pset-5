@@ -20,7 +20,7 @@ public class ProblemSet5 {
 
     public static void main(String[] args) {
         ProblemSet5 ps = new ProblemSet5();
-        System.out.println(ps.addMe("akhb kuga d123 kjbs 4 oj5"));
+        System.out.println(ps.sequence("onjndafjjjj"));
     }
 
     /*
@@ -169,16 +169,38 @@ public class ProblemSet5 {
     }
 
     /*
-    //  * Exercise 8.
-    //  *
-    //  * Given a string, compute the length of the longest sequence.
-    //  */
-    //
-    // public long sequence(String text) {
-    //
-    // }
-    //
-    // /*
+     * Exercise 8.
+     *
+     * Given a string, compute the length of the longest sequence.
+     */
+
+    public long sequence(String text) {
+      char currentChar = ' ';
+      char oldChar = ' ';
+      int currentLength = 0;
+      int highLength = 0;
+      if (text.equals(null)) {
+        return -1;
+      } else if (text.length() == 0) {
+        return 0;
+      } else {
+        for (int i = 1; i < text.length(); i++) {
+          oldChar = currentChar;
+          currentChar = text.charAt(i);
+          if (oldChar == currentChar) {
+            currentLength++;
+          } else {
+            currentLength = 1;
+          }
+          if (currentLength > highLength) {
+            highLength = currentLength;
+          }
+        }
+        return highLength;
+      }
+    }
+
+    /*
     //  * Exercise 9.
     //  *
     //  * Given two strings, return a new string built by intertwining each of the
