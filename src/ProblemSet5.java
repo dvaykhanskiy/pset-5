@@ -20,7 +20,7 @@ public class ProblemSet5 {
 
     public static void main(String[] args) {
         ProblemSet5 ps = new ProblemSet5();
-        System.out.println(ps.sequence("onjndafjjjj"));
+        System.out.println(ps.isPalindrome("m"));
     }
 
     /*
@@ -163,7 +163,6 @@ public class ProblemSet5 {
             numInts++;
           }
         }
-        System.out.println(char1);
         return numInts;
       }
     }
@@ -201,23 +200,52 @@ public class ProblemSet5 {
     }
 
     /*
-    //  * Exercise 9.
-    //  *
-    //  * Given two strings, return a new string built by intertwining each of the
-    //  * characters of a and b.
-    //  */
-    //
-    // public String intertwine(String a, String b) {
-    //
-    // }
-    //
-    // /*
-    //  * Exercise 10.
-    //  *
-    //  * Given a string, determine whether or not it is a palindrome.
-    //  */
-    //
-    // public boolean isPalindrome(String text) {
-    //
-    // }
+     * Exercise 9.
+     *
+     * Given two strings, return a new string built by intertwining each of the
+     * characters of a and b.
+     */
+
+    public String intertwine(String a, String b) {
+      String newStr = "";
+      int bigLength = b.length();
+      if (a.length() > b.length()) {
+        bigLength = a.length();
+      }
+      if (a.equals(null) || b.equals(null)) {
+        return null;
+      } else {
+        for (int i = 0; i < bigLength; i++) {
+          if (a.length() > i) {
+            newStr += String.valueOf(a.charAt(i));
+          }
+          if (b.length() > i) {
+            newStr += String.valueOf(b.charAt(i));
+          }
+        }
+        return newStr;
+      }
+    }
+
+    /*
+     * Exercise 10.
+     *
+     * Given a string, determine whether or not it is a palindrome.
+     */
+
+    public boolean isPalindrome(String text) {
+      String backwards = "";
+      boolean isPal = false;
+      if (text.equals(null)) {
+        return isPal;
+      } else {
+        for (int i = text.length() - 1; i >= 0; i--) {
+          backwards += String.valueOf(text.charAt(i));
+        }
+        if (text.equals(backwards)) {
+          isPal = true;
+        }
+        return isPal;
+      }
+    }
 }
